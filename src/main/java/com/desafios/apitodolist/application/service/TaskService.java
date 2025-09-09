@@ -48,6 +48,8 @@ public class TaskService {
     }
 
     public TaskResponseDTO updateTask(Long id, TaskRequestDTO taskRequestDTO) {
+        validadeTaskData.validadeData(taskRequestDTO);
+
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException("Task not found"));
 
