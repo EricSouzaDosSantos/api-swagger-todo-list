@@ -31,7 +31,6 @@ public class TaskService {
         taskRepository.save(task);
 
         return builderTaskResponseDTO(task);
-
     }
 
     public TaskResponseDTO getTaskById(Long id) {
