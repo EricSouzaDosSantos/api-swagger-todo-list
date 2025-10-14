@@ -2,7 +2,7 @@ package com.desafios.apitodolist.application.service;
 
 import com.desafios.apitodolist.application.dto.task.TaskRequestDTO;
 import com.desafios.apitodolist.application.dto.task.TaskResponseDTO;
-import com.desafios.apitodolist.domain.Task;
+import com.desafios.apitodolist.domain.entity.Task;
 import com.desafios.apitodolist.domain.enums.TaskPriority;
 import com.desafios.apitodolist.domain.exception.task.TaskNotFoundException;
 import com.desafios.apitodolist.domain.repository.TaskRepository;

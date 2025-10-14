@@ -1,6 +1,6 @@
 package com.desafios.apitodolist.domain.service;
 
-import com.desafios.apitodolist.domain.Task;
+import com.desafios.apitodolist.domain.entity.Task;
 import com.desafios.apitodolist.domain.enums.TaskPriority;
 import com.desafios.apitodolist.domain.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;

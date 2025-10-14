@@ -2,7 +2,6 @@ package com.desafios.apitodolist;
 
 import com.desafios.apitodolist.application.dto.task.TaskRequestDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,7 +11,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDateTime;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -94,5 +95,23 @@ public class IntegrationServiceTest {
                 .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.message").value("Expiration date cannot be in the past"));
+    }
+
+    @Test
+    void mustGetInvalidService() throws Exception{
+        mockMvc.perform(
+                get("/tasks/a")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isBadRequest())
+            .andExpect(jsonPath("$.errorCode").value(400));
+    }
+
+    @Test
+    void mustGetValidService() throws Exception{
+        mockMvc.perform(
+                get("/tasks/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+        ).andExpect(status().isOk())
+         .andExpect(jsonPath("$.id").value(1));
     }
 }
