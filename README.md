@@ -13,7 +13,7 @@ Uma API REST feita para desenvolver mais a minha compreensão em swagger e jwt. 
 - **Persistência** com PostgreSQL e JPA/Hibernate
 - **Validação** de dados de entrada
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Java 17**
 - **Spring Boot 3.5.4**
@@ -164,7 +164,7 @@ http://localhost:8080/swagger-ui.html
 - `USER` - Usuário padrão
 - `ADMIN` - Administrador do sistema
 
-## 🧪 Testes
+## Testes
 
 Execute os testes da aplicação:
 
@@ -172,7 +172,7 @@ Execute os testes da aplicação:
 ./mvnw test
 ```
 
-## 🤝 Contribuição
+## Contribuição
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -192,4 +192,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 
 ---
 
-⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!
+ Se este projeto foi útil para você, considere dar uma estrela no repositório!
